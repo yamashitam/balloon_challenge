@@ -1,9 +1,11 @@
 <head>
 <link rel="stylesheet" href="style.css">
 <script language="javascript" type="text/javascript">
-  var balloon_color=["red", "blue", "yellow", "green", "pink", "orange", "cyan"];
+  var balloon_color=["red", "blue", "yellow", "green", "purple", "orange", "gray"];
   function addBalloon(teamId, problemId) {
-    document.getElementById("team"+teamId+"_problem"+problemId).innerHTML = "<span style=\"background-color:"+balloon_color[problemId]+"\">　　　　　</span>";
+<!--    document.getElementById("team"+teamId+"_problem"+problemId).innerHTML = "<span style=\"background-color:"+balloon_color[problemId]+"\">　　　　　</span>";
+-->
+    document.getElementById("team"+teamId+"_problem"+problemId).innerHTML = "<img src=\"./img/"+balloon_color[problemId]+".png\">";
   }
 </script>
 </head>
@@ -25,17 +27,19 @@
     <tbody>
       <script language="javascript" type="text/javascript">
         var i, j;
-        var team_name = ["Dandelion", "#[]", "Fablous", "konishiki", "Gunma's Ambition", "Drops"];
+        var team_name = ["Drops", "KMJ", "Gunma's Ambition", "Konishiki", "|:3=", "#[]", "PATTONE", "Dandelion", "Fabulous", "Team HKS", "Team Y・K・K"];
+        var tags = "";
         for(i = 0; i < 11; i++) {
-          document.write("<tr>");
-          document.write("<th>"+team_name[i]+"</th>");
+          tags += "<tr>";
+          tags += "<th>"+team_name[i]+"</th>";
           for(j = 0; j < 7; j++) {
-            document.write("<td id=\"team"+i+"_problem"+j+"\" class=\"solved\">");
-            document.write("<input type=\"button\" value=\"solved!\" onclick=\"addBalloon("+i+", "+j+");\">");
-            document.write("</td>");
+            tags += "<td id=\"team"+i+"_problem"+j+"\" class=\"solved\">";
+            tags += "<input type=\"button\" value=\"solved!\" onclick=\"addBalloon("+i+", "+j+");\">";
+            tags += "</td>";
           }
-          document.write("</tr>");
+          tags += "</tr>";
         }
+        document.write(tags);
       </script>
     </tbody>
   </table>
