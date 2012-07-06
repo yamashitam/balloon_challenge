@@ -1,13 +1,17 @@
+<html>
 <head>
+
 <link rel="stylesheet" href="style.css">
+
 <script language="javascript" type="text/javascript">
   var balloon_color=["red", "blue", "yellow", "green", "purple", "orange", "gray"];
   function addBalloon(teamId, problemId) {
-<!--    document.getElementById("team"+teamId+"_problem"+problemId).innerHTML = "<span style=\"background-color:"+balloon_color[problemId]+"\">　　　　　</span>";
--->
-    document.getElementById("team"+teamId+"_problem"+problemId).innerHTML = "<img src=\"./img/"+balloon_color[problemId]+".png\">";
+    document.getElementById("team"+teamId+"_problem"+problemId).innerHTML = "<img src=\"./img/"+balloon_color[problemId]+".png\" width=57 height=72>";
   }
 </script>
+
+<title>Balloon Challenge</title>
+
 </head>
 
 <body>
@@ -34,7 +38,7 @@
           tags += "<th>"+team_name[i]+"</th>";
           for(j = 0; j < 7; j++) {
             tags += "<td id=\"team"+i+"_problem"+j+"\" class=\"solved\">";
-            tags += "<input type=\"button\" value=\"solved!\" onclick=\"addBalloon("+i+", "+j+");\">";
+            tags += "<input type=\"button\" value=\"*\" onclick=\"addBalloon("+i+", "+j+");\">";
             tags += "</td>";
           }
           tags += "</tr>";
@@ -44,3 +48,4 @@
     </tbody>
   </table>
 </body>
+</html>
