@@ -31,9 +31,13 @@
     <tbody>
       <script language="javascript" type="text/javascript">
         var i, j;
+
+        <!-- ここにチーム名とチーム数を書く -->
         var team_name = ["Drops", "KMJ", "Gunma's Ambition", "Konishiki", "|:3=", "#[]", "PATTONE", "Dandelion", "Fabulous", "Team HKS", "Team Y・K・K"];
+        var team_number = 11;
+
         var tags = "";
-        for(i = 0; i < 11; i++) {
+        for(i = 0; i < team_number; i++) {
           tags += "<tr>";
           tags += "<th>"+team_name[i]+"</th>";
           for(j = 0; j < 7; j++) {
