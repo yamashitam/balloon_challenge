@@ -1,0 +1,42 @@
+<head>
+<link rel="stylesheet" href="style.css">
+<script language="javascript" type="text/javascript">
+  var balloon_color=["red", "blue", "yellow", "green", "pink", "orange", "cyan"];
+  function addBalloon(teamId, problemId) {
+    document.getElementById("team"+teamId+"_problem"+problemId).innerHTML = "<span style=\"background-color:"+balloon_color[problemId]+"\">　　　　　</span>";
+  }
+</script>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>チーム名</th>
+        <td class="table-head">A</td>
+        <td class="table-head">B</td>
+        <td class="table-head">C</td>
+        <td class="table-head">D</td>
+        <td class="table-head">E</td>
+        <td class="table-head">F</td>
+        <td class="table-head">G</td>
+      </tr>
+    </thead>
+    <tbody>
+      <script language="javascript" type="text/javascript">
+        var i, j;
+        var team_name = ["Dandelion", "#[]", "Fablous", "konishiki", "Gunma's Ambition", "Drops"];
+        for(i = 0; i < 11; i++) {
+          document.write("<tr>");
+          document.write("<th>"+team_name[i]+"</th>");
+          for(j = 0; j < 7; j++) {
+            document.write("<td id=\"team"+i+"_problem"+j+"\" class=\"solved\">");
+            document.write("<input type=\"button\" value=\"solved!\" onclick=\"addBalloon("+i+", "+j+");\">");
+            document.write("</td>");
+          }
+          document.write("</tr>");
+        }
+      </script>
+    </tbody>
+  </table>
+</body>
