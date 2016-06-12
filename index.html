@@ -1,12 +1,15 @@
 <html>
 <head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="style.css">
 
 <script language="javascript" type="text/javascript">
   var balloon_color=["red", "blue", "yellow", "green", "purple", "orange", "gray"];
   function addBalloon(teamId, problemId) {
-    document.getElementById("team"+teamId+"_problem"+problemId).innerHTML = "<img src=\"./img/"+balloon_color[problemId]+".png\" width=57 height=72>";
+    document.getElementById("team"+teamId+"_problem"+problemId).innerHTML = "<img src=\"./img/"+balloon_color[problemId]+".png\" width=57 height=72 onclick=\"balloon("+teamId+", "+problemId+");\">";
+  }
+  function balloon(teamId, problemId) {
+    document.getElementById("team"+teamId+"_problem"+problemId).innerHTML = "<input type=\"button\" value=\"*\" onclick=\"addBalloon("+teamId+", "+problemId+");\">";
   }
 </script>
 
@@ -33,8 +36,8 @@
         var i, j;
 
         <!-- ここにチーム名とチーム数を書く -->
-        var team_name = ["Drops", "KMJ", "Gunma's Ambition", "Konishiki", "|:3=", "#[]", "PATTONE", "Dandelion", "Fabulous", "Team HKS", "Team Y・K・K"];
-        var team_number = 11;
+        var team_name = ["Make IT Shine", "Theory of Computing Lab. -HAS-", "Binary ya binary", "M.liter", "Theory of Computing Lab. -rmn-"];
+        var team_number = team_name.length;
 
         var tags = "";
         for(i = 0; i < team_number; i++) {
